@@ -6,6 +6,8 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.launch
 
 class AgendarCitaActivity : AppCompatActivity() {
 
@@ -19,7 +21,7 @@ class AgendarCitaActivity : AppCompatActivity() {
         val etHora = findViewById<EditText>(R.id.etHora)
         val btnGuardar = findViewById<Button>(R.id.btnGuardar)
 
-        btnGuardar.setOnClickListener { it: View? ->
+        btnGuardar.setOnClickListener {
 
             val cliente = etCliente.text.toString()
             val servicio = etServicio.text.toString()
@@ -27,17 +29,40 @@ class AgendarCitaActivity : AppCompatActivity() {
             val hora = etHora.text.toString()
 
             if (cliente.isEmpty() || servicio.isEmpty() || fecha.isEmpty() || hora.isEmpty()) {
+
                 Toast.makeText(
                     this,
                     "Completa todos los campos",
                     Toast.LENGTH_SHORT
                 ).show()
+
             } else {
-                Toast.makeText(
-                    this,
-                    "Cita guardada para $cliente\n$servicio\n$fecha - $hora",
-                    Toast.LENGTH_LONG
-                ).show()
+
+                val cita = Cita(
+                    cliente = cliente,
+                    servicio = servicio,
+                    fecha = fecha,
+                    hora = hora
+                )
+
+                val db = AppDatabase.getDatabase(this)
+
+                lifecycleScope.launch {
+                    db.citaDao().insertarCita(cita)
+
+                    runOnUiThread {
+                        Toast.makeText(
+                            this@AgendarCitaActivity,
+                            "Cita guardada correctamente",
+                            Toast.LENGTH_LONG
+                        ).show()
+
+                        etCliente.text.clear()
+                        etServicio.text.clear()
+                        etFecha.text.clear()
+                        etHora.text.clear()
+                    }
+                }
             }
         }
     }
