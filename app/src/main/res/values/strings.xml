@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">BarberApp</string>
+    <string name="agendar_cita">Agendar cita</string>
+    <string name="nombre_del_cliente">Nombre del cliente</string>
+    <string name="servicio">Servicio</string>
+    <string name="fecha">Fecha</string>
+    <string name="hora">Hora</string>
+    <string name="guardar_cita">Guardar cita</string>
 </resources>

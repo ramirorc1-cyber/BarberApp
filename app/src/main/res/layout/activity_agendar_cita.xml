@@ -2,12 +2,12 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:padding="16dp"
-    android:background="@color/background"
+    android:background="@color/color_background"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <TextView
-        android:text="Agendar cita"
+        android:text="@string/agendar_cita"
         android:textSize="22sp"
         android:textStyle="bold"
         android:layout_marginBottom="16dp"
@@ -16,34 +16,42 @@
 
     <EditText
         android:id="@+id/etCliente"
-        android:hint="Nombre del cliente"
+        android:hint="@string/nombre_del_cliente"
+        android:paddingVertical="12dp"
+        android:importantForAutofill="no"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
     <EditText
         android:id="@+id/etServicio"
-        android:hint="Servicio"
+        android:hint="@string/servicio"
+        android:paddingVertical="12dp"
         android:layout_marginTop="8dp"
+        android:importantForAutofill="no"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
     <EditText
         android:id="@+id/etFecha"
-        android:hint="Fecha"
+        android:hint="@string/fecha"
+        android:paddingVertical="12dp"
         android:layout_marginTop="8dp"
+        android:importantForAutofill="no"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
     <EditText
         android:id="@+id/etHora"
-        android:hint="Hora"
+        android:hint="@string/hora"
+        android:paddingVertical="12dp"
         android:layout_marginTop="8dp"
+        android:importantForAutofill="no"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
     <Button
         android:id="@+id/btnGuardar"
-        android:text="Guardar cita"
+        android:text="@string/guardar_cita"
         android:layout_marginTop="16dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
