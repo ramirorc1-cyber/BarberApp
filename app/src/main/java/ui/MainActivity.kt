@@ -1,35 +1,33 @@
 package com.example.barberapp.ui
 
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.barberapp.R
+import com.example.barberapp.model.Cita
 
 class MainActivity : AppCompatActivity() {
+
+    private val listaCitas = mutableListOf<Cita>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val etCliente = findViewById<EditText>(R.id.etCliente)
-        val etServicio = findViewById<EditText>(R.id.etServicio)
-        val etFecha = findViewById<EditText>(R.id.etFecha)
-        val etHora = findViewById<EditText>(R.id.etHora)
-        val btnGuardar = findViewById<Button>(R.id.btnGuardar)
+        val recyclerView = findViewById<RecyclerView>(R.id.rvCitas)
 
-        btnGuardar.setOnClickListener {
-            val cliente = etCliente.text.toString()
-            val servicio = etServicio.text.toString()
-            val fecha = etFecha.text.toString()
-            val hora = etHora.text.toString()
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.adapter = CitaAdapter(listaCitas)
 
-            if (cliente.isBlank() || servicio.isBlank() || fecha.isBlank() || hora.isBlank()) {
-                Toast.makeText(this, "Completa todos los campos", Toast.LENGTH_SHORT).show()
-            } else {
-                Toast.makeText(this, "Cita guardada correctamente", Toast.LENGTH_SHORT).show()
-            }
-        }
+        // 🔹 Datos de prueba (por ahora)
+        listaCitas.add(
+            Cita("Juan", "Corte", "10/01/2026", "10:30")
+        )
+        listaCitas.add(
+            Cita("Pedro", "Barba", "10/01/2026", "11:00")
+        )
+
+        recyclerView.adapter?.notifyDataSetChanged()
     }
 }

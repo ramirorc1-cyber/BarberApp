@@ -2,14 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:padding="12dp"
-    android:background="@android:color/white"
+    android:background="#F5F5F5"
     android:layout_marginBottom="8dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
     <TextView
         android:id="@+id/tvCliente"
-        android:text="Cliente"
         android:textStyle="bold"
         android:textSize="16sp"
         android:layout_width="wrap_content"
@@ -17,15 +16,12 @@
 
     <TextView
         android:id="@+id/tvServicio"
-        android:text="Servicio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
     <TextView
         android:id="@+id/tvFechaHora"
-        android:text="Fecha y hora"
         android:textSize="12sp"
-        android:textColor="#555555"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
