@@ -2,51 +2,22 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/main"
     android:orientation="vertical"
-    android:padding="16dp"
-    android:background="@color/color_background"
+    android:gravity="center"
+    android:padding="24dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <TextView
-        android:text="Agendar cita"
-        android:textSize="22sp"
+        android:text="BarberApp"
+        android:textSize="26sp"
         android:textStyle="bold"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="32dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
-    <EditText
-        android:id="@+id/etCliente"
-        android:hint="Nombre del cliente"
-        android:paddingVertical="12dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
-    <EditText
-        android:id="@+id/etServicio"
-        android:hint="Servicio (Corte, Barba)"
-        android:layout_marginTop="13dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
-    <EditText
-        android:id="@+id/etFecha"
-        android:hint="Fecha (dd/mm/yyyy)"
-        android:layout_marginTop="14dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
-    <EditText
-        android:id="@+id/etHora"
-        android:hint="Hora (10:30)"
-        android:layout_marginTop="15dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
     <Button
-        android:id="@+id/btnGuardar"
-        android:text="Guardar cita"
-        android:layout_marginTop="16dp"
+        android:id="@+id/btnAgendar"
+        android:text="Agendar cita"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 

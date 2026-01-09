@@ -8,18 +8,18 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.barberapp.R
 import com.example.barberapp.ui.AgendarCitaActivity
 
-
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val btnAgendar = findViewById<Button>(R.id.btnGuardar)
+        val btnAgendar = findViewById<Button>(R.id.btnAgendar)
 
         btnAgendar.setOnClickListener {
-            val intent = Intent(this, AgendarCitaActivity::class.java)
-            startActivity(intent)
+            startActivity(
+                Intent(this, AgendarCitaActivity::class.java)
+            )
         }
     }
 }
