@@ -1,12 +1,11 @@
 package com.example.barberapp.ui
 
-
-import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.barberapp.R
-import com.example.barberapp.ui.AgendarCitaActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -14,12 +13,23 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val btnAgendar = findViewById<Button>(R.id.btnAgendar)
+        val etCliente = findViewById<EditText>(R.id.etCliente)
+        val etServicio = findViewById<EditText>(R.id.etServicio)
+        val etFecha = findViewById<EditText>(R.id.etFecha)
+        val etHora = findViewById<EditText>(R.id.etHora)
+        val btnGuardar = findViewById<Button>(R.id.btnGuardar)
 
-        btnAgendar.setOnClickListener {
-            startActivity(
-                Intent(this, AgendarCitaActivity::class.java)
-            )
+        btnGuardar.setOnClickListener {
+            val cliente = etCliente.text.toString()
+            val servicio = etServicio.text.toString()
+            val fecha = etFecha.text.toString()
+            val hora = etHora.text.toString()
+
+            if (cliente.isBlank() || servicio.isBlank() || fecha.isBlank() || hora.isBlank()) {
+                Toast.makeText(this, "Completa todos los campos", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(this, "Cita guardada correctamente", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 }

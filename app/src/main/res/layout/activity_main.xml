@@ -1,24 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/main"
     android:orientation="vertical"
-    android:gravity="center"
-    android:padding="24dp"
+    android:padding="16dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <TextView
-        android:text="BarberApp"
-        android:textSize="26sp"
+        android:text="Agendar cita"
+        android:textSize="22sp"
         android:textStyle="bold"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="16dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/etCliente"
+        android:hint="Nombre del cliente"
+        android:minHeight="48dp"
+        android:padding="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/etServicio"
+        android:hint="Servicio"
+        android:minHeight="48dp"
+        android:padding="12dp"
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/etFecha"
+        android:hint="Fecha"
+        android:minHeight="48dp"
+        android:padding="12dp"
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/etHora"
+        android:hint="Hora"
+        android:minHeight="48dp"
+        android:padding="12dp"
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
     <Button
-        android:id="@+id/btnAgendar"
-        android:text="Agendar cita"
+        android:id="@+id/btnGuardar"
+        android:text="Guardar cita"
+        android:minHeight="48dp"
+        android:layout_marginTop="16dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content" />
 
 </LinearLayout>
