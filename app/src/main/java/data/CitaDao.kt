@@ -1,4 +1,4 @@
-package com.example.barberapp
+package data
 
 import androidx.room.Dao
 import androidx.room.Insert

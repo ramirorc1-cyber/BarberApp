@@ -1,9 +1,13 @@
-package com.example.barberapp
+package com.example.barberapp.ui
+
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import com.example.barberapp.R
+import com.example.barberapp.ui.AgendarCitaActivity
+
 
 class MainActivity : AppCompatActivity() {
 

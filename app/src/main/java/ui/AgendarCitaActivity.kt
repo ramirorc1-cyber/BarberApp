@@ -1,12 +1,15 @@
-package com.example.barberapp
+package com.example.barberapp.ui
+
 
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
+import data.AppDatabase
+import data.Cita
+import com.example.barberapp.R
 import kotlinx.coroutines.launch
 
 class AgendarCitaActivity : AppCompatActivity() {
@@ -45,7 +48,7 @@ class AgendarCitaActivity : AppCompatActivity() {
                     hora = hora
                 )
 
-                val db = AppDatabase.getDatabase(this)
+                val db = AppDatabase.Companion.getDatabase(this)
 
                 lifecycleScope.launch {
                     db.citaDao().insertarCita(cita)

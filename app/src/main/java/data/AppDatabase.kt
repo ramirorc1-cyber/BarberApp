@@ -1,4 +1,4 @@
-package com.example.barberapp
+package data
 
 import android.content.Context
 import androidx.room.Database
